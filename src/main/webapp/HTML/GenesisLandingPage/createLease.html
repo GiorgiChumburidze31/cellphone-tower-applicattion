@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Lease Agreement</title>
+  <link rel="stylesheet" href="/genesisportal/CSS/crud.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="genesis.html" aria-label="Tower Lease Manager home">
+      <span class="brand-icon" aria-hidden="true"></span>
+      <span>Tower Lease Manager</span>
+    </a>
+    <a class="back-link" href="genesis.html">Back to Home</a>
+  </header>
+
+  <main class="form-page">
+    <section class="form-card">
+      <div class="form-heading">
+        <p>Create</p>
+        <h1>Create Lease Agreement</h1>
+        <span>Add a new tower lease agreement record.</span>
+      </div>
+
+      <form action="/genesisportal/CreateAgreementServlet" method="post">
+        <input type="hidden" name="operation" value="create">
+
+        <div class="form-grid">
+          <label>
+            Agreement ID
+            <input type="text" name="agreement_id" placeholder="Enter agreement ID" required>
+          </label>
+
+          <label>
+            Tenant Name
+            <input type="text" name="tenant_name" placeholder="Enter tenant name" required>
+          </label>
+
+          <label>
+            Tower
+            <select name="tower_id" required>
+              <option value="">Select tower</option>
+              <!--
+                These options should be generated dynamically from the
+                towers table (e.g. via JSP or a servlet-populated list),
+                rather than hardcoded. Placeholder options shown below
+                for now until that wiring is built.
+              -->
+              <option value="1">North Ridge Tower - S-4471</option>
+            </select>
+          </label>
+
+          <label>
+            Lease Start Date
+            <input type="date" name="lease_start_date" required>
+          </label>
+
+          <label>
+            Lease End Date
+            <input type="date" name="lease_end_date" required>
+          </label>
+        </div>
+
+        <label>
+          Notes
+          <textarea name="notes" rows="4" placeholder="Optional lease notes"></textarea>
+        </label>
+
+        <button class="submit-button" type="submit">Create Lease</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Tower</title>
+  <link rel="stylesheet" href="/genesisportal/CSS/crud.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="genesis.html" aria-label="Tower Lease Manager home">
+      <span class="brand-icon" aria-hidden="true"></span>
+      <span>Tower Lease Manager</span>
+    </a>
+    <a class="back-link" href="genesis.html">Back to Home</a>
+  </header>
+
+  <main class="form-page">
+    <section class="form-card">
+      <div class="form-heading">
+        <p>Create</p>
+        <h1>Create Tower</h1>
+        <span>Register a new tower site into the system.</span>
+      </div>
+
+      <form action="/genesisportal/CreateTowerServlet" method="post">
+        <input type="hidden" name="operation" value="create">
+
+        <div class="form-grid">
+          <label>
+            Site ID
+            <input type="text" name="site_id" placeholder="Enter site ID" required>
+          </label>
+
+          <label>
+            Tower Name
+            <input type="text" name="tower_name" placeholder="Enter tower name" required>
+          </label>
+
+          <label>
+            Site Name
+            <input type="text" name="site_name" placeholder="Enter site name" required>
+          </label>
+
+          <label>
+            City
+            <input type="text" name="city" placeholder="Enter city" required>
+          </label>
+
+          <label>
+            State
+            <input type="text" name="state" placeholder="Enter state" maxlength="2" required>
+          </label>
+
+          <label>
+            Latitude
+            <input type="number" name="latitude" placeholder="Enter latitude" step="any" required>
+          </label>
+
+          <label>
+            Longitude
+            <input type="number" name="longitude" placeholder="Enter longitude" step="any" required>
+          </label>
+
+          <label>
+            Height
+            <input type="number" name="height" placeholder="Enter height in feet" min="0" step="0.01" required>
+          </label>
+
+          <label>
+            Type
+            <select name="site_type" required>
+              <option value="">Select type</option>
+              <option value="tower">Tower</option>
+              <option value="rooftop">Rooftop</option>
+              <option value="watertower">Watertower</option>
+              <option value="land">Land</option>
+            </select>
+          </label>
+        </div>
+
+        <button class="submit-button" type="submit">Create Tower</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -21,5 +21,9 @@ public class LoginServlet extends HttpServlet {
         response.getWriter().println("<h1>Form received</h1>");
         response.getWriter().println("<p>Username: " + username + "</p>");
         response.getWriter().println("<p>Password: " + password + "</p>");
+        
+        
+        
+        
     }
 }

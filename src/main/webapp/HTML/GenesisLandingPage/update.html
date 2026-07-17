@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Lease Agreement</title>
+  <link rel="stylesheet" href="/genesisportal/CSS/crud.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="genesis.html" aria-label="Tower Lease Manager home">
+      <span class="brand-icon" aria-hidden="true"></span>
+      <span>Tower Lease Manager</span>
+    </a>
+    <a class="back-link" href="genesis.html">Back to Home</a>
+  </header>
+
+  <main class="form-page">
+    <section class="form-card">
+      <div class="form-heading">
+        <p>Update</p>
+        <h1>Update Lease Agreement</h1>
+        <span>Edit an existing tower lease agreement record.</span>
+      </div>
+
+      <form action="ModifyAgreementServlet" method="post">
+        <input type="hidden" name="operation" value="update">
+        <input type="hidden" name="_method" value="put">
+
+        <div class="form-grid">
+          <label>
+            Agreement ID
+            <input type="text" name="agreement_id" placeholder="Enter agreement ID" required>
+          </label>
+
+          <label>
+            Tenant Name
+            <input type="text" name="tenant_name" placeholder="Enter tenant name">
+          </label>
+
+          <label>
+            Tower Name
+            <input type="text" name="tower_name" placeholder="Enter tower name">
+          </label>
+
+          <label>
+            Site Name
+            <input type="text" name="site_name" placeholder="Enter site name">
+          </label>
+
+          <label>
+            Site ID
+            <input type="text" name="site_id" placeholder="Enter site ID">
+          </label>
+
+          <label>
+            City
+            <input type="text" name="city" placeholder="Enter city">
+          </label>
+
+          <label>
+            State
+            <input type="text" name="state" placeholder="Enter state" maxlength="2">
+          </label>
+
+          <label>
+            Latitude
+            <input type="number" name="latitude" placeholder="Enter latitude" step="any">
+          </label>
+
+          <label>
+            Longitude
+            <input type="number" name="longitude" placeholder="Enter longitude" step="any">
+          </label>
+
+          <label>
+            Height
+            <input type="number" name="height" placeholder="Enter height in feet" min="0" step="0.01">
+          </label>
+
+          <label>
+            Type
+            <select name="site_type">
+              <option value="">Select type</option>
+              <option value="tower">Tower</option>
+              <option value="rooftop">Rooftop</option>
+              <option value="watertower">Watertower</option>
+              <option value="land">Land</option>
+            </select>
+          </label>
+
+          <label>
+            Lease Status
+            <select name="lease_status">
+              <option value="">Select status</option>
+              <option value="active">Active</option>
+              <option value="pending">Pending</option>
+              <option value="expired">Expired</option>
+              <option value="terminated">Terminated</option>
+            </select>
+          </label>
+
+          <label>
+            Lease Start Date
+            <input type="date" name="lease_start_date">
+          </label>
+
+          <label>
+            Lease End Date
+            <input type="date" name="lease_end_date">
+          </label>
+        </div>
+
+        <label>
+          Update Notes
+          <textarea name="notes" rows="4" placeholder="Describe the update"></textarea>
+        </label>
+
+        <button class="submit-button" type="submit">Update Lease</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
