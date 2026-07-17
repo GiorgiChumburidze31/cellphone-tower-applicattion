@@ -15,7 +15,7 @@
         <h1> Sign In</h1>
         <p>  Enter your details to access your account.</p>
 
-        <form action = "LoginAuthenticator" method="post">
+        <form action = "LoginServlet" method="post">
            
             <label for = "username">Username</label>
             <input type = "text" id = "username" name = "username" required>
@@ -25,6 +25,10 @@
 
             <button type = "submit">Log In</button>
 
+			<p class="signup-prompt">
+            Don't have an account? <a href="HTML/register.html">Create one</a>
+            </p>
+			
         </form>
 
 <!-- Submit button packages up all the infromation in the form, and performs the action-->
