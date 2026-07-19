@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Account Created</title>
-    <link rel="stylesheet" href="../../CSS/jspRegResponse.css">
+    <link rel="stylesheet" href="/genesisportal/CSS/jspRegResponse.css">
 </head>
 <body>
     <div class="card">
